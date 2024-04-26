@@ -83,8 +83,8 @@ def login():
                     # # session["email"] = email
                     # print(f"Welcome back, {email}")
                     #
-                    # name = ref.child(f'Users/{user_info["localId"]}/User Data/Name').get()
-                    # session['name'] = name
+                    name = ref.child(f'Users/{user_info["localId"]}/User Data/Name').get()
+                    session['name'] = name
 
                     return redirect("/chat")
                 else:
@@ -117,4 +117,4 @@ def chat():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=9999)
+    app.run(debug=True, port=9999, host="192.168.1.175")
